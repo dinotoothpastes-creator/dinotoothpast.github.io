@@ -1,38 +1,64 @@
-<body style="font-family: Arial, sans-serif; margin: 0;">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DinoTooth Store</title>
+
+  <!-- This is your STYLE SECTION -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .shop-btn {
+      background-color: black;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .featured {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .featured img {
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
 
   <!-- Hero Section -->
-  <div style="
-    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-  ">
-    <h1 style="font-size: 48px; margin-bottom: 10px;">Welcome to My Store</h1>
-    <p style="font-size: 20px; max-width: 600px; margin: 0 auto;">
-      High‑quality products, built with style and simplicity.
-    </p>
+  <div class="hero">
+    <h1>Welcome to DinoTooth</h1>
+    <p>The freshest dropshipping store for clean teeth and clean vibes.</p>
+    <a href="product.html" class="shop-btn">Shop Now</a>
   </div>
 
   <!-- Featured Product Section -->
-  <div style="text-align: center; padding: 40px 20px;">
-    <img src="product.jpg" width="250" style="border-radius: 10px; box-shadow: 0px 0px 15px rgba(0,0,0,0.2);">
-
-    <h2 style="margin-top: 20px;">Featured Product</h2>
+  <div class="featured">
+    <img src="product.jpg" width="250">
+    <h2>Featured Product</h2>
     <p>$29.99</p>
-
     <a href="product.html">
-      <button style="
-        background-color: black;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        font-size: 16px;
-        border-radius: 6px;
-        cursor: pointer;
-      ">
-        View Product
-      </button>
+      <button class="shop-btn">View Product</button>
     </a>
   </div>
 
 </body>
+</html>
+
