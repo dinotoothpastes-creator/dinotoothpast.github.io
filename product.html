@@ -73,12 +73,39 @@
 
 <button onclick="processOrder()" class="buy-btn">Buy Now</button>
 
+<div id="loader" style="
+  display: none;
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top-color: black;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+"></div>
+
 <script>
 function processOrder() {
-    alert("Processing your order...");
-    window.location.href = "checkout.html"; 
+    // Hide button, show spinner
+    document.querySelector('.buy-btn').style.display = "none";
+    document.getElementById('loader').style.display = "block";
+
+    // Simulate loading time
+    setTimeout(() => {
+        window.location.href = "checkout.html";
+    }, 1500); // 1.5 seconds
 }
+
+// Spinner animation
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+`;
+document.head.appendChild(style);
 </script>
+
 
 </body>
 </html>
