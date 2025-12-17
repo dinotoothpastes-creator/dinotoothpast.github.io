@@ -1,111 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Product</title>
+    <title>Product</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 40px;
+        }
+
+        img {
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            max-width: 500px;
+            margin: 10px auto;
+        }
+
+        /* Spinner animation */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
 </head>
 
-  <body><div style="
-    display:flex;
-    align-items:center;
-    gap:20px;
-    padding:15px 20px;
-    border-bottom: 2px solid #000;
-">
-    <a href="index.html" style="
-        color:white;
-        background:black;
-        padding:8px 16px;
-        border-radius:4px;
-        text-decoration:none;
-        font-weight:bold;
+<body>
+
+    <!-- Top back button bar -->
+    <div style="
+        display:flex;
+        align-items:center;
+        gap:20px;
+        padding:15px 20px;
+        border-bottom: 2px solid #000;
     ">
-        ← Back
-    </a>
+        <a href="index.html" style="
+            color:white;
+            background:black;
+            padding:8px 16px;
+            border-radius:4px;
+            text-decoration:none;
+            font-weight:bold;
+        ">
+            ← Back
+        </a>
 
-    <div style="flex:1; height:2px; background:black;"></div>
-</div>
-</body>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 40px;
-  }
+        <div style="flex:1; height:2px; background:black;"></div>
+    </div>
 
-  img {
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-  }
 
-  button {
-    background-color: black;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
+    <!-- Product content -->
+    <h1>My Product</h1>
 
-  button:hover {
-    background-color: #333;
-  }
+    <img src="Screenshot 2025-09-17 201555.png" width="300">
 
-  p {
-    font-size: 18px;
-    max-width: 500px;
-    margin: 10px auto;
-  }
-</style>
+    <p><strong>Price:</strong> $29.99</p>
 
-<body style="text-align: center;">
+    <p>
+        This product is designed for everyday use. Clean design, solid quality,
+        and made to last. Perfect for anyone who wants something simple and reliable.
+    </p>
 
-  <h1>My Product</h1>
+    <button onclick="processOrder()" class="buy-btn">Buy Now</button>
 
-  <img src="Screenshot 2025-09-17 201555.png" width="300">
+    <!-- Spinner -->
+    <div id="loader" style="
+        display: none;
+        width: 50px;
+        height: 50px;
+        border: 6px solid #ccc;
+        border-top-color: black;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+    "></div>
 
-  <p><strong>Price:</strong> $29.99</p>
-  <p>
-  This product is designed for everyday use. Clean design, solid quality,
-  and made to last. Perfect for anyone who wants something simple and reliable.
-</p>
 
-<button onclick="processOrder()" class="buy-btn">Buy Now</button>
+    <script>
+        function processOrder() {
+            // Hide button + show spinner
+            document.querySelector('.buy-btn').style.display = "none";
+            document.getElementById('loader').style.display = "block";
 
-<div id="loader" style="
-  display: none;
-  width: 50px;
-  height: 50px;
-  border: 6px solid #ccc;
-  border-top-color: black;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
-"></div>
-
-<script>
-function processOrder() {
-    // Hide button, show spinner
-    document.querySelector('.buy-btn').style.display = "none";
-    document.getElementById('loader').style.display = "block";
-
-    // Simulate loading time
-    setTimeout(() => {
-        window.location.href = "checkout.html";
-    }, 1500); // 1.5 seconds
-}
-
-// Spinner animation
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-`;
-document.head.appendChild(style);
-</script>
-
+            // Simulate loading time
+            setTimeout(() => {
+                window.location.href = "checkout.html";
+            }, 1500);
+        }
+    </script>
 
 </body>
 </html>
